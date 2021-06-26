@@ -27,9 +27,6 @@ CREATE TABLE orders (
 CREATE TABLE order_items (
   order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
   item_id INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
-  url_image VARCHAR(255) NOT NULL,
-  price INTEGER  NOT NULL DEFAULT 0,
-  type VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE items (
@@ -37,5 +34,8 @@ CREATE TABLE items (
   quantity SMALLINT NOT NULL,
   is_ready BOOLEAN DEFAULT false,
   special_instructions TEXT,
-  cooking_time INTEGER NOT NULL
+  cooking_time INTEGER NOT NULL,
+  url_image VARCHAR(255) NOT NULL,
+  price INTEGER  NOT NULL DEFAULT 0,
+  type VARCHAR(255) NOT NULL
 );
