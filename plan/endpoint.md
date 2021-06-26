@@ -1,26 +1,21 @@
 
-# get         /foods
-  * looking at all foods
+# get         /products
+  * looking at all products
   * searching
 
-# get         /foods/:id
+# get         /products/:id 
   * display specific food
 
-# patch/put   /foods/:id
-  * category? (optional)
-# post        /foods
-
-# delete      /foods/:id
-  * remove item from cart
 
 
 
 
 # get         /cart
-  * see foods on carts
+  * see products on carts
   * see total price
 
 # patch/put   /cart/:id
+  * remove items
   
 
 # post   /cart/:id
@@ -30,14 +25,15 @@
 
 
 
-# get  /login
-  * display login form
-# post /login/:id
-  * user can login
-# post /logout
 
-# get /user (? or user/:id?) 
-  * see order history
+<!-- # get  /login -->
+  <!-- * display login form -->
+<!-- # post /login/:id -->
+  <!-- * user can login -->
+<!-- # post /logout -->
+
+<!-- # get /user (? or user/:id?)  -->
+  <!-- * see order history -->
 
 
 # get /checkout
@@ -52,6 +48,6 @@
   * owner sees orders
 
 # patch or post /admin/:id 
-  * can accept order
+  * can accept order and enter completion time
   * infrom food completion
   * inform order completion
