@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const checkoutQueries = require('../db/checkoutQueries');
-const { checkout } = require('./users');
 
 router.get('/', (req, res) => {
   checkoutQueries.getCheckout()
