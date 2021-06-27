@@ -32,12 +32,12 @@ app.use(express.static('public'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const usersRoutes = require('./routes/users');
 const widgetsRoutes = require('./routes/widgets');
+const usersRoutes = require('./routes/users');
+const productsRoutes = require('./routes/products');
 const indexRoutes = require('./routes/index');
 const { checkout } = require('./routes/users');
 //---------------------------------------
-const productsRoutes = require('./routes/products');
 const cartRoutes = require('./routes/cart');
 const checkoutRoutes = require('./routes/checkout');
 const productsRoutes = require('./routes/admin');
