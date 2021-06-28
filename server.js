@@ -3,6 +3,7 @@ require('dotenv').config();
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
+// eslint-disable-next-line no-unused-vars
 const ENV        = process.env.ENV || "development";
 const express    = require("express");
 const bodyParser = require("body-parser");
@@ -23,6 +24,7 @@ app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -34,11 +36,13 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
+const foodsRoutes = require("./routes/foods");
 const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
+app.use("/api/foods", foodsRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
