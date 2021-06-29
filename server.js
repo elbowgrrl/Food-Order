@@ -47,11 +47,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/foods", foodsRoutes(db));
 app.use("/api/checkout", checkoutRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-<<<<<<< HEAD
-app.use("/admin", adminRoutes(db));
-=======
 app.use("/api/admin", adminRoutes(db));
->>>>>>> dc2a02f52ec1d9376a5b7877940147dee593aa75
 // Note: mount other resources here, using the same pattern above
 
 
