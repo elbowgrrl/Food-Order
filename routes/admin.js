@@ -21,7 +21,7 @@ const adminRoutes = (db) => {
       .catch((error) => {
         console.log("Error message: ", error);
       });
-  })
+  });
 
   return router;
 };
