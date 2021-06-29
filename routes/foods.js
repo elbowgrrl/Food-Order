@@ -7,7 +7,7 @@ module.exports = (db) => {
     db.query(query)
       .then(data => {
         const foods = data.rows;
-        res.json({ foods });
+        res.json(foods);
       })
       .catch(err => {
         res
