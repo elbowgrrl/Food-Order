@@ -10,7 +10,6 @@ $(() => {
       });
   };
 
-  const checkoutList = {};
   const createFoodElement = (food) => {
     const $food = $(`
     <article class="menu-item">
@@ -23,7 +22,6 @@ $(() => {
       </footer>
     </article>
     `);
-
     let quantity = 0;
     const $addToCart = $(`<button type="submit" class="confirm">Add to cart</button>`)
       .click(function() {
@@ -35,14 +33,12 @@ $(() => {
         object['foodId'] = id;
         object['totalPrice'] = price * quantity;
         object['quantity'] = quantity;
-        checkoutList[id] = object;
       });
-    const $moreInfo = $(`<button type="submit"   class="confirm">More info</button>`)
+    const $moreInfo = $(`<button type="submit" class="confirm">More info</button>`)
       .click(function() {});
 
     const $addButtons = $(`.menu-footer`);
     $addButtons.append($addToCart, $moreInfo);
-
     return $food;
   };
 
