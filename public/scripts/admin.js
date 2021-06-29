@@ -1,13 +1,17 @@
+// eslint-disable-next-line no-undef
 $(() => {
   console.log("hi");
   const loadOrders = () => {
-    $.get('/admin')
+    // eslint-disable-next-line no-undef
+    $.get('/api/admin')
       .then((orders) => {
+        console.log(orders);
         renderOrders(orders);
       });
   };
 
   const displayOrderElement = (order) => {
+    // eslint-disable-next-line no-undef
     const $order = $(`
       <div class="order">
         <h3>Order Number: ${order.id}</h3>
@@ -16,9 +20,11 @@ $(() => {
       </div>
     `);
     return $order;
-  }
+  };
+
   const renderOrders = (orders) => {
-    const $orderList = $('#orderList');
+    // eslint-disable-next-line no-undef
+    const $orderList = $('');
     $orderList.empty();
 
     for (const order of orders) {
