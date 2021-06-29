@@ -18,63 +18,64 @@
   <script type="text/javascript" src="/scripts/app.js"></script>
 
 </head>
+
 <body>
-<nav>
-  <span id="logo">Yoommi</span>
-  <span class="tag-line">Where deliciousness lives</span>
-  <span><label for="site-search">What are you craving?</label>
-<input type="search" id="site-search" name="q"
-       aria-label="Search through site content"><br>
-<button>Search</button></span>
-</nav>
-<div class="main">
-  <!-- customer order confirmation ---->
-<article class="center">
-  <header>
-    <span class="title">Checkout</span>
-    <span class="customer-name">Customer Name</span>
-  </header>
-  <table>
-    <thead>
-      <tr>
-        <th>Quantity</th>
-        <th>Item</th>
-        <th>Remove</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Pizza</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$16.99</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Burger</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$12.99</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Bubble Tea</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$7.99</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <td>Special Instructions</td>
-      <td></td>
-      <td></td>
-      <td><textarea placeholder="Please enter any special instructions for your order here"
-        name="special-instructions"rows="5" cols="33"></textarea></td>
-    </tfoot>
-  </table>
-<footer class="center">
-  <button type="submit" class="confirm">Place Order</button>
-  <span class="footer-text">Order Total: </span></footer>
-</article>
-</div>
+  <nav>
+    <span id="logo">Yoommi</span>
+    <span class="tag-line">Where deliciousness lives</span>
+    <span><label for="site-search">What are you craving?</label>
+      <input type="search" id="site-search" name="q" aria-label="Search through site content"><br>
+      <button>Search</button></span>
+  </nav>
+  <div class="main">
+    <!-- customer order confirmation ---->
+    <article class="center">
+      <header>
+        <span class="title">Checkout</span>
+        <span class="customer-name">Customer Name</span>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Item</th>
+            <th>Remove</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Pizza</td>
+            <td><button type="submit" class="confirm">Remove</button></td>
+            <td>$16.99</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Burger</td>
+            <td><button type="submit" class="confirm">Remove</button></td>
+            <td>$12.99</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Bubble Tea</td>
+            <td><button type="submit" class="confirm">Remove</button></td>
+            <td>$7.99</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <td>Special Instructions</td>
+          <td></td>
+          <td></td>
+          <td><textarea placeholder="Please enter any special instructions for your order here"
+              name="special-instructions" rows="5" cols="33"></textarea></td>
+        </tfoot>
+      </table>
+      <footer class="center">
+        <button type="submit" class="confirm">Place Order</button>
+        <span class="footer-text">Order Total: </span>
+      </footer>
+    </article>
+  </div>
 </body>
 </html>
