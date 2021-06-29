@@ -1,6 +1,6 @@
 nav {
   background-color: #EBB92D;
-  height: 150px;
+  height: 160px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15px;
@@ -26,8 +26,8 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-family: 'Jomhuria', serif;
-  font-size: 35px;
+  font-family: 'Rubik', serif;
+  font-size: 18pt;
 }
 
 #search-button {
@@ -45,13 +45,16 @@ nav {
 
 #logo {
   font-family: 'Fredoka One', sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   color: #EB1C3E;
+  -webkit-text-stroke: 3px #802a2a;
 }
 
+
+
 #tag-line {
-  font-family: 'Jomhuria', serif;
+  font-family: 'Rubik', serif;
   color: black;
-  font-size: 45px;
+  font-size: 26pt;
 }
 
