@@ -6,6 +6,5 @@ CREATE TABLE foods (
   url_image VARCHAR(255) NOT NULL,
   price INTEGER  NOT NULL DEFAULT 0,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
-  is_available BOOLEAN DEFAULT true,
   cooking_time INTEGER NOT NULL
 );
