@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Menu</title>
-
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/menu.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-
-</head>
+  <%- include partials/_header.ejs %>
 <body>
 <nav>
   <container class="main-nav">
@@ -37,97 +16,58 @@
 </container>
 </nav>
 <div class="body">
-<container class="menu-container">
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
+<container class="main-container">
+  <!-- This is where menu or table content gets appended -->
+  <article class="cart-order">
+    <header>
+      <span class="title">Order ID</span>
+      <span class="customer-name">Customer Name</span>
     </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
+    <table class="item-table">
+      <thead>
+        <tr>
+          <th scope="column">Quantity</th>
+          <th scope="column">Item</th>
+          <th scope="column">Remove</th>
+          <th scope="column">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Pizza</td>
+          <td><button type="submit" class="confirm">Remove</button></td>
+          <td>$16.99</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Burger</td>
+          <td><button type="submit" class="confirm">Remove</button></td>
+          <td>$12.99</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bubble Tea</td>
+          <td><button type="submit" class="confirm">Remove</button></td>
+          <td>$7.99</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+        <td>Special Instructions</td>
+        <td></td>
+        <td></td>
+        <td><textarea placeholder="Please enter any special instructions for your order here"
+          name="special-instructions"rows="5" cols="33"></textarea></td>
+        </tr>
+      </tfoot>
+    </table>
+  <footer class="center">
+    <button type="submit" class="confirm">Place Order</button>
+    <span class="footer-text">Order Total: </span></footer>
   </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
-  <article class="menu-item">
-    <header class="menu-header">
-      <span>Burger</span>
-      <span>$16.99</span>
-    </header>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="confirm">More info</button>
-    </footer>
-  </article>
+
+  <!-- End of container for ammending -->
 </container>
 
 </div>
