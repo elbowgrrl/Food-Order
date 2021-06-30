@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// /api/admin
+  // /api/admin
 const adminRoutes = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM orders;`)
@@ -11,7 +11,6 @@ const adminRoutes = (db) => {
       .catch((error) => {
         console.log("Error message: ", error);
       });
-    //res.render("admin");
   });
   // /api/admin/:orderId
   router.get("/:orderid", (req, res) => {
@@ -25,7 +24,7 @@ const adminRoutes = (db) => {
     GROUP BY orders.id, foods.name
     ;`, [reqParams])
       .then((response) => {
-        res.json(response.rows[0]);
+        res.json(response.rows);
       })
       .catch((error) => {
         console.log("Error message: ", error);
