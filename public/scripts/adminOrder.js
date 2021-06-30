@@ -1,10 +1,11 @@
 $(() => {
   const loadOrders = () => {
     const orderId = $('#reqParam').text();
+    console.log("orderID", orderId);
     $.get(`/api/admin/${orderId}`)
       .then((order) => {
-        console.log("6 order", order);
         renderOrders(order);
+        console.log("6 order", order);
       });
   };
 
@@ -19,11 +20,12 @@ $(() => {
     return $orderHtml;
   };
 
-  const renderOrders = (order) => {
+  const renderOrders = (orders) => {
     const $orderList = $('#orderInfo');
-    const display = displayOrderElement(order);
-    console.log("display: ", display);
-    $orderList.html(displayOrderElement(order));
+    $orderList.empty();
+    for (const order of orders) {
+      $orderList.append(displayOrderElement(order));
+    }
   };
   loadOrders();
 });
