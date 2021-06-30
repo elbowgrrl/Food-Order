@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// /api/admin
 const adminRoutes = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM orders;`)
@@ -12,17 +11,10 @@ const adminRoutes = (db) => {
         console.log("Error message: ", error);
       });
   });
-  // /api/admin/:orderId
-  router.get("/:orderid", (req, res) => {
-    const reqParams = req.params.orderid;
-    db.query(`
-    SELECT orders.id, foods.name, SUM(foods.price) AS total_price
-    FROM orders
-    JOIN order_foods ON order_foods.order_id = orders.id
-    JOIN foods ON food_id = foods.id
-    WHERE orders.id = $1
-    GROUP BY orders.id, foods.name
-    ;`, [reqParams])
+
+  router.get("/:id", (req, res) => {
+    const reqParams = req.params.id;
+    db.query(`SELECT * FROM orders WHERE id = $1;`, [reqParams])
       .then((response) => {
         res.json(response.rows[0]);
       })
@@ -35,5 +27,3 @@ const adminRoutes = (db) => {
 };
 
 module.exports = adminRoutes;
-
-

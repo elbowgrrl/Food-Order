@@ -12,20 +12,26 @@ $(() => {
 
   const checkoutList = {};
   const createFoodElement = (food) => {
+    const $foodPrice = food.price / 100;
     const $food = $(`
     <article class="menu-item">
       <header class="menu-header">
         <span>${food.name}</span>
-        <span>$${food.price}</span>
-        <img src="${food.url_image}" alt="">
+        <span>$${$foodPrice}</span>
       </header>
+      <body>
+      <img class="food-image" src="${food.url_image}">
+      </body>
       <footer class="menu-footer">
-      </footer>
+      <button type="submit" class="confirm">Add to cart</button>
+      <button type="submit" class="more-info">More info</button>
+    </footer>
     </article>
     `);
 
+
     let quantity = 0;
-    const $addToCart = $(`<button type="submit" class="confirm">Add to cart</button>`)
+    const $addToCart = $(`.confirm`)
       .click(function() {
         const object = {};
         quantity++;
@@ -37,17 +43,16 @@ $(() => {
         object['quantity'] = quantity;
         checkoutList[id] = object;
       });
-    const $moreInfo = $(`<button type="submit"   class="confirm">More info</button>`)
+    const $moreInfo = $(`.more-info`)
       .click(function() {});
 
-    const $addButtons = $(`.menu-footer`);
-    $addButtons.append($addToCart, $moreInfo);
 
     return $food;
   };
 
   const renderFoods = (foods) => {
-    const $foodList = $('.menu-container');
+    //Please keep this ID
+    const $foodList = $('#main-container');
     $foodList.empty();
     for (const food of foods) {
       $foodList.append(createFoodElement(food));
