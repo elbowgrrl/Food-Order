@@ -65,6 +65,7 @@ app.get("/admin", (req, res) => {
 });
 app.get("/admin/:orderid", (req, res) => {
   const reqParam = req.params.orderid;
+  console.log("reqParam", reqParam);
   res.render("adminOrder" , { reqParam });
 });
 
