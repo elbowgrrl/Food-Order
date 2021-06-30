@@ -60,10 +60,12 @@ app.use("/api/admin", adminRoutes(db));
 app.get("/", (req, res) => {
   res.render("menu");
 });
-
-app.get("/login/:id", (req, res) => {
-  req.session.userId = req.params.id;
-  res.render("menu");
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+app.get("/admin/:orderid", (req, res) => {
+  const reqParam = req.params.orderid;
+  res.render("adminOrder" , { reqParam });
 });
 
 app.listen(PORT, () => {
