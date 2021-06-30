@@ -19,7 +19,7 @@ $(() => {
 
 
   const renderFoodList = (foodList) => {
-    const $foodList = $('.menu-container');
+    const $foodList = $('.main-container');
     $foodList.empty();
 
 

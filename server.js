@@ -27,6 +27,7 @@ db.connect();
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -37,6 +38,10 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
+app.use(cookieSession({
+  name: "session",
+  keys: ["secret keys"]
+}));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -58,7 +63,6 @@ app.use("/api/admin", adminRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
@@ -71,6 +75,14 @@ app.get('/login/:id', (req, res) => {
   res.redirect('/');
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+app.get("/admin/:orderid", (req, res) => {
+  const reqParam = req.params.orderid;
+  console.log("reqParam", reqParam);
+  res.render("adminOrder" , { reqParam });
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
