@@ -21,6 +21,7 @@ $(() => {
     return $order;
   };
 
+
   const renderOrders = (orders) => {
     const $orderList = $('#orderInfo');
     $orderList.empty();
