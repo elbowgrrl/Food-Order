@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include partials/_header.ejs %>
+<body>
+  <nav>
+    <container class="main-nav">
+    <container class="logo-tag">
+      <a id="logo">Yoommi <i class="fas fa-rainbow"></i></a>
+      <br>
+      <a id="tag-line">Where deliciousness lives</a>
+    </container>
+    <container class ="search-bar">
+  <button id="logout">Logout</button></container>
+  </container>
+  </nav>
+<div class="main">
+  <!-- customer order confirmation ---->
+<article class="center">
+  <header>
+    <span class="title">Order ID</span>
+    <span class="customer-name">Customer Name</span>
+  </header>
+  <div id="orderInfo">
+    <span id="reqParam"><%= reqParam %></span>
+  </div>
+<footer class="center">
+</article>
+</div>
+</body>
+</html>
