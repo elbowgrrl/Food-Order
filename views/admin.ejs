@@ -15,7 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/scripts/admin.js"></script>
+
 
 </head>
 <body>
@@ -34,43 +39,17 @@
   <table>
     <thead>
       <tr>
-        <th>Quantity</th>
-        <th>Item</th>
-        <th>Remove</th>
-        <th>Price</th>
+        <th>Order Id</th>
+        <th>Order Time</th>
+        <th>Special Instructions</th>
+        <th>More Infomation</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Pizza</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$16.99</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Burger</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$12.99</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Bubble Tea</td>
-        <td><button type="submit" class="confirm">Remove</button></td>
-        <td>$7.99</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <td>Special Instructions</td>
-      <td></td>
-      <td></td>
-      <td><textarea placeholder="Please enter any special instructions for your order here"
-        name="special-instructions"rows="5" cols="33"></textarea></td>
-    </tfoot>
+    <tbody id="orderInfo"></tbody>
+
   </table>
 <footer class="center">
-  <button type="submit" class="confirm">Place Order</button>
-  <span class="footer-text">Order Total: </span></footer>
+  <span class="footer-text"></span></footer>
 </article>
 </div>
 </body>
