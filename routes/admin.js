@@ -52,6 +52,7 @@ const adminRoutes = (db) => {
       })
       .then(message => console.log(message.sid))
       .catch(error => console.log(error.message));
+    res.json({ success: true });
   });
 
   return router;
