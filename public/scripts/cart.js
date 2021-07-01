@@ -45,14 +45,14 @@ $(() => {
             </table>
           </div>
           <div>
-            <form id='place-order'>
+            <form id="place_order">
                <label for="special_instructions">Special Instructions</label>
                <textarea placeholder="Please enter any special instructions for your order here" name="special_instructions" rows="5" cols="33"></textarea>
+               <span class="footer-text"></span>
+               <button type="submit" class="confirm">Place Order</ button>
             </form>
           </div>
         <footer class="cart-article-footer">
-          <span class="footer-text"></span>
-          <button id="place-order" type="submit" class="confirm">Place Order</ button>
         </footer>
       </article>
     `);
@@ -85,9 +85,10 @@ $(() => {
       renderFoodList(foodList);
     });
 
-
-    const $placeOrder = $(`#place-order`)
+    console.log('before Place order button');
+    const $placeOrder = $("#place_order")
       .submit(function(event) {
+        // alert("Hello");
         event.preventDefault();
         const data = $(this).serializeArray();
         const { name, value } = data[0];
@@ -108,7 +109,7 @@ $(() => {
       <tr id='table${id}'>
         <td class="cart-table">${quantity}</td>
         <td class="cart-table">${name}</td>
-        <td class="cart-table"><button type="submit" class="reduce-quantity" id='${foodInfo.id}'>Remove</button></td>
+        <td class="cart-table"><button type="submit" class="reduce-quantity" id='${id}'>Remove</button></td>
         <td class="cart-table">$${price / 100}</td>
         <td class="cart-table">$${(price * quantity) / 100}</td>
       </tr>

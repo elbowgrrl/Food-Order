@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 $(() => {
   const loadOrders = () => {
     $.get('/api/admin')
       .then((orders) => {
-        console.log(orders);
+        // console.log(orders);
         renderOrders(orders);
       });
   };
@@ -32,6 +33,7 @@ $(() => {
     `);
     return $order;
   };
+
 
   const renderOrders = (orders) => {
     const $orderList = $('#order-container');
