@@ -3,7 +3,7 @@ $(() => {
   const loadOrders = () => {
     $.get('/api/admin')
       .then((orders) => {
-        console.log(orders);
+        // console.log(orders);
         renderOrders(orders);
       });
   };
