@@ -23,9 +23,9 @@ const adminRoutes = (db) => {
     db.query(`
     SELECT orders.id,
            foods.name,
-           SUM(foods.price*quantity) AS total_price,
            order_foods.quantity AS quantity,
-           foods.price AS price
+           foods.price AS price,
+           SUM(foods.price*quantity) AS total_price
     FROM orders
     JOIN order_foods ON order_foods.order_id = orders.id
     JOIN foods ON food_id = foods.id
