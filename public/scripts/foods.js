@@ -41,11 +41,12 @@ $(() => {
 
 
   const createFoodElement = function(food) {
+    price = food.price / 100;
     const $foodInfo = `
     <article class="menu-item">
       <header class="menu-header">
         <span>${food.name}</span>
-        <span>$${food.price}</span>
+        <span>$${price}</span>
       </header>
       <body>
         <img class="food-image" src="${food.url_image}">
