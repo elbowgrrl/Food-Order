@@ -24,13 +24,13 @@ $(() => {
 
 
     const $checkout = $(`
-      <article class="center">
-        <header>
+      <article class="cart-article">
+        <header class="cart-article-header">
           <span class="title">Checkout</span>
           <span class="customer-name">Customer Name</span>
         </header>
           <div>
-            <table>
+            <table class="cart-table">
               <thead>
                 <tr>
                   <th>Quantity</th>
@@ -48,11 +48,11 @@ $(() => {
             <form id='place-order'>
                <label for="special_instructions">Special Instructions</label>
                <textarea placeholder="Please enter any special instructions for your order here" name="special_instructions" rows="5" cols="33"></textarea>
-                <button type="submit" class="confirm">Place Order</ button>
             </form>
           </div>
-        <footer class="center">
+        <footer class="cart-article-footer">
           <span class="footer-text"></span>
+          <button id="place-order" type="submit" class="confirm">Place Order</ button>
         </footer>
       </article>
     `);
@@ -71,7 +71,7 @@ $(() => {
     $foodContainer.append(foodContainer.join(', '));
 
 
-    $(`.footer-text`).text(`Order Total: $${getTotalPrice(foodList)}`);
+    $(`.footer-text`).text(`Order Total: $${getTotalPrice(foodList) / 100}`);
 
 
     $(".reduce-quantity").click((event) => {
@@ -106,11 +106,11 @@ $(() => {
     const { id, price, quantity, name } = foodInfo;
     let $food = `
       <tr id='table${id}'>
-        <td>${quantity}</td>
-        <td>${name}</td>
-        <td><button type="submit" class="reduce-quantity" id='${foodInfo.id}'>Remove</button></td>
-        <td>$${price}</td>
-        <td>$${price * quantity}</td>
+        <td class="cart-table">${quantity}</td>
+        <td class="cart-table">${name}</td>
+        <td class="cart-table"><button type="submit" class="reduce-quantity" id='${foodInfo.id}'>Remove</button></td>
+        <td class="cart-table">$${price / 100}</td>
+        <td class="cart-table">$${(price * quantity) / 100}</td>
       </tr>
     `;
     return $food;
