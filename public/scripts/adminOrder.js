@@ -9,27 +9,34 @@ $(() => {
         renderOrders(orders);
       });
   };
-  const displayOrderElement = (order) => {
-    const $orderHtml = (`
-        <div>
-          <h4>food name : ${order.name}</h4>
-          <h4>food name : ${order.user_name}</h4>
-          <h4>quantity : ${order.quantity}</h4>
-          <h4>price : $${order.price / 100}</h4>
-        </div>
-    `);
-    return $orderHtml;
-  };
+  // const displayOrderElement = (order) => {
+  //   const $orderHtml = (`
+  //   <article class="cart-order">
+  //       <div>
+  //         <h4>food name : ${order.name}</h4>
+  //         <h4>quantity : ${order.quantity}</h4>
+  //         <h4>price : $${order.price / 100}</h4>
+  //       </div>
+  //   </article>
+  //   `);
+  //   return $orderHtml;
+  // };
 
-  const displayStartOrEndOrderElement = (order) => {
+
+  const displayOrderElement = (order) => {
+
     //  console.log(order);
     const $orderHtml = (`
-        <form>
-          <h4>food name : ${order.name}</h4>
-          <h4>food name : ${order.user_name}</h4>
-          <h4>quantity : ${order.quantity}</h4>
-          <h4>price : $${order.price / 100}</h4>
-        </form>
+    <article class="cart-order">
+    <div class="Rtable Rtable--3cols">
+      <div class="Rtable-cell">food name</div>
+      <div class="Rtable-cell">quantity</div>
+      <div class="Rtable-cell">price</div>
+      <div class="Rtable-cell">${order.name}</div>
+      <div class="Rtable-cell">${order.quantity}</div>
+      <div class="Rtable-cell">$${order.price / 100}</div>
+    </div>
+    </article>
     `);
     return $orderHtml;
   };
@@ -48,7 +55,7 @@ $(() => {
         $orderList.append(displayOrderElement(orders[i]));
       }
       if (i === orders.length - 1) {
-        $orderList.append(displayStartOrEndOrderElement(orders[i]));
+        $orderList.append(displayOrderElement(orders[i]));
         $orderList.append(`<h4>total price : $${totalPrice / 100}</h4>`);
       }
     }
