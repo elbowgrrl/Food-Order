@@ -12,11 +12,26 @@ $(() => {
     for (const key in foodList) {
       const { price, quantity } = foodList[key];
       totalPrice += price * quantity;
-      console.log(totalPrice);
     }
     return totalPrice;
   };
 
+  const getEstimatedTime = (foodList) => {
+    let longestlongest = 0;
+    let numberOfDishes = 0;
+    console.log(foodList);
+    for (const key in foodList) {
+      // eslint-disable-next-line camelcase
+      const { cooking_time, quantity } = foodList[key];
+      // eslint-disable-next-line camelcase
+      if (longestlongest < cooking_time * quantity) {
+        // eslint-disable-next-line camelcase
+        longestlongest = cooking_time * quantity;
+      }
+      numberOfDishes += 1 * quantity;
+    }
+    return longestlongest + (2 * numberOfDishes);
+  };
 
   const renderFoodList = (foodList) => {
     const $foodList = $('.main-container');
@@ -49,6 +64,7 @@ $(() => {
                <label for="special_instructions">Special Instructions</label>
                <textarea placeholder="Please enter any special instructions for your order here" name="special_instructions" rows="5" cols="33"></textarea>
                <span class="footer-text"></span>
+               <span class="estimated-time"></span>
                <button type="submit" class="confirm">Place Order</ button>
             </form>
           </div>
@@ -73,6 +89,7 @@ $(() => {
 
     $(`.footer-text`).text(`Order Total: $${getTotalPrice(foodList) / 100}`);
 
+    $(`.estimated-time`).text(`Estimated Order Completion Time: ${getEstimatedTime(foodList)} min(s)`);
 
     $(".reduce-quantity").click((event) => {
       const id = event.target.id;
@@ -85,7 +102,6 @@ $(() => {
       renderFoodList(foodList);
     });
 
-    console.log('before Place order button');
     const $placeOrder = $("#place_order")
       .submit(function(event) {
         // alert("Hello");
