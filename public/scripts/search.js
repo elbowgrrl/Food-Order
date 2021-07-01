@@ -16,17 +16,17 @@ $(() => {
 
   const displaySearchFood = (food) => {
     const $food = (`
-    <article class="menu-item">
-    <header class="menu-header">
+    <article class="search-item">
+    <header class="search-header">
       <span>${food.name}</span>
       <span>$${food.price / 100}</span>
     </header>
     <body>
     <img class="food-image" src="${food.url_image}">
     </body>
-    <footer class="menu-footer">
+    <footer class="search-footer">
       <button type="submit" class="confirm">Add to cart</button>
-      <button type="submit" class="more-info">More info</button>
+      <button type="submit" class="confirm">More info</button>
     </footer>
     </article>
     `);

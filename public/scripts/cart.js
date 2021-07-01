@@ -104,7 +104,7 @@ $(() => {
 
     const $placeOrder = $("#place_order")
       .submit(function(event) {
-        // alert("Hello");
+        alert("Hello");
         event.preventDefault();
         const data = $(this).serializeArray();
         const { name, value } = data[0];
