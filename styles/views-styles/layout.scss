@@ -1,0 +1,36 @@
+// See: https://sass-lang.com/
+
+body {
+  background-color: #EEE;
+
+  h1 {
+    color: #244751;
+  }
+}
+
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+//buttons
+.confirm {
+	background-color:#61E8EB;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#040404;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 51px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #219496;
+}
+.confirm:hover {
+	background-color:#219496
+}
+.confirm:active {
+	position:relative;
+	top:1px;
+}

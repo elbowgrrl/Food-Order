@@ -1,0 +1,60 @@
+nav {
+  background-color: #EBB92D;
+  height: 160px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Rubik', serif;
+  font-size: 18pt;
+}
+
+#search-button {
+  width: 95px;
+  height: 25px;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+#search-box {
+  width: 250px;
+  height: 25px;
+  font-size: 12pt;
+}
+
+#logo {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 70px;
+  color: #EB1C3E;
+  -webkit-text-stroke: 3px #802a2a;
+}
+
+#tag-line {
+  font-family: 'Rubik', serif;
+  color: black;
+  font-size: 26pt;
+}
+
+
+
