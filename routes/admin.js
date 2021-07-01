@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
+require('dotenv').config();
 
-  // /api/admin
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+// /api/admin
 const adminRoutes = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM orders;`)
@@ -36,6 +41,16 @@ const adminRoutes = (db) => {
       .catch((error) => {
         console.log("Error message: ", error);
       });
+  });
+
+  router.post("/:orderId", (req, res) => {
+    client.messages
+      .create({
+        body: 'BY awesome!',
+        from: '+18328624039',
+        to: '+12508858981'
+      })
+      .then(message => console.log(message.sid));
   });
 
   return router;
