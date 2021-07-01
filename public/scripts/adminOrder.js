@@ -8,7 +8,6 @@ $(() => {
         console.log("6 order", order);
       });
   };
-
   const displayOrderElement = (order) => {
     const $orderHtml = (`
         <div>
@@ -19,7 +18,6 @@ $(() => {
     `);
     return $orderHtml;
   };
-
   const renderOrders = (orders) => {
     const $orderList = $('#orderInfo');
     $orderList.empty();

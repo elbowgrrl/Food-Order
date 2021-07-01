@@ -25,7 +25,7 @@ const adminRoutes = (db) => {
     GROUP BY orders.id, foods.name
     ;`, [reqParams])
       .then((response) => {
-        res.json(response.rows[0]);
+        res.json(response.rows);
       })
       .catch((error) => {
         console.log("Error message: ", error);
