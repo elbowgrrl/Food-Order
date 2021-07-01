@@ -45,14 +45,14 @@ $(() => {
             </table>
           </div>
           <div>
-            <form id='place-order'>
+            <form id="place_order">
                <label for="special_instructions">Special Instructions</label>
                <textarea placeholder="Please enter any special instructions for your order here" name="special_instructions" rows="5" cols="33"></textarea>
+               <span class="footer-text"></span>
+               <button type="submit" class="confirm">Place Order</ button>
             </form>
           </div>
         <footer class="cart-article-footer">
-          <span class="footer-text"></span>
-          <button id="place-order" type="submit" class="confirm">Place Order</ button>
         </footer>
       </article>
     `);
@@ -86,9 +86,9 @@ $(() => {
     });
 
     console.log('before Place order button');
-    const $placeOrder = $("#place-order")
+    const $placeOrder = $("#place_order")
       .submit(function(event) {
-        console.log("Hello");
+        // alert("Hello");
         event.preventDefault();
         const data = $(this).serializeArray();
         const { name, value } = data[0];
