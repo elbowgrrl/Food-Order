@@ -1,5 +1,4 @@
 $(() => {
-  // const twilioApi = require("./twilio/send_sms");
 
   const loadOrders = () => {
     const orderId = $('#reqParam').text();
@@ -54,7 +53,7 @@ $(() => {
   $notifyForm.submit(function(event) {
     event.preventDefault();
     console.log("notify form button submitted!");
-    // twilioApi();
+    $.post(`/api/admin/:orderId`);
   });
 
   loadOrders();
