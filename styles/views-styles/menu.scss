@@ -110,7 +110,27 @@
 #cart:hover {
 	background-color:#219496
 }
+
 #cart:active {
 	position:relative;
 	top:1px;
+}
+
+#more-info-item {
+  padding: 25;
+  background-color: rgb(206, 202, 202);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.more-info-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+p {
+  padding: 25px;
 }

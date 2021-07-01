@@ -1,7 +1,6 @@
 $(() => {
   const loadOrders = () => {
     const orderId = $('#reqParam').text();
-    console.log("orderID", orderId);
     $.get(`/api/admin/${orderId}`)
       .then((order) => {
         renderOrders(order);

@@ -4,10 +4,9 @@ const foodList = {};
 $(() => {
   // fetch the products
   const loadFoods = () => {
-    $.get(`/api/foods`)
-      .then((foods) => {
-        renderFoods(foods.reverse());
-      });
+    $.get(`/api/foods`).then((foods) => {
+      renderFoods(foods.reverse());
+    });
   };
   loadFoods();
 
@@ -18,11 +17,9 @@ $(() => {
     for (const food of foods) {
       foodContainer.push(createFoodElement(food));
     }
-    $foodList.append(foodContainer.join(', '));
-
+    $foodList.append(foodContainer.join(", "));
 
     $(".add-to-cart").click((event) => {
-
       const id = parseInt(event.target.id);
 
       for (const food of foods) {
@@ -30,32 +27,44 @@ $(() => {
           foodList[id] = food;
         }
       }
-      if (!foodList[id]['quantity']) {
-        foodList[id]['quantity'] = 1;
+      if (!foodList[id]["quantity"]) {
+        foodList[id]["quantity"] = 1;
       } else {
-        foodList[id]['quantity'] += 1;
+        foodList[id]["quantity"] += 1;
       }
-
     });
 
     $(".more-info-button").click((event) => {
       const $foodContainer = $(".main-container");
       const id = parseInt(event.target.id);
-      $foodContainer.empty();
       console.log("id", id);
-      $foodContainer.append(createMoreInfoElement(id));
+      $foodContainer.empty();
+      $.get(`/api/foods/${id}`)
+        .then((food) => {
+          const element = createMoreInfoElement(food)
+          $foodContainer.append(element);
 
-    })
+          $("#back-to-menu").click((event) => {
+            const $foodContainer = $(".main-container");
+            $foodContainer.empty();
+            console.log("clicked", event);
+            $.get(`/api/foods`)
+            .then((foods) => {
+              renderFoods(foods.reverse());
+            });
+          });
 
-
+        });
+    });
   };
+
 
 
 });
 
 
 
-const createFoodElement = function(food) {
+const createFoodElement = function (food) {
   price = food.price / 100;
   const $foodInfo = `
   <article class="menu-item">
@@ -76,23 +85,24 @@ const createFoodElement = function(food) {
   return $foodInfo;
 };
 
-const createMoreInfoElement = function(id) {
-  priceInCents = id.price / 100;
+const createMoreInfoElement = function (food) {
   const $moreInfo = `
-  <article class="menu-item">
+  <article id="more-info-item">
   <header class="menu-header">
-    <span>${id.name}</span>
-    <span>$${priceInCents}</span>
+    <span>${food.name}</span>
+    <span>$${food.price / 100}</span>
   </header>
+  <div class="more-info-body">
   <body>
-    <img class="food-image" src="${id.url_image}">
+    <img class="food-image" src="${food.url_image}">
+    <p>${food.description}</p>
   </body>
+  </div>
   <footer class="menu-footer">
-    <button class='add-to-cart' id="${id.id}">Add to cart</button>
-    <button class="more-info-button" id='${id.id}'>More info</button>
+    <button class="confirm" id="back-to-menu">Back to Menu</button>
   </footer>
 </article>
   `;
 
   return $moreInfo;
-}
+};
