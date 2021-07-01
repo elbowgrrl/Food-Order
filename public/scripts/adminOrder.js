@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 $(() => {
   const loadOrders = () => {
     const orderId = $('#reqParam').text();
