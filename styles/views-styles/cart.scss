@@ -1,0 +1,29 @@
+.cart-article {
+  width: 60%;
+  padding: 20px;
+  border: 15px solid #802a2a;
+  border-radius: 10px;
+  margin: 55px;
+}
+
+.cart-article-header {
+  font-size: 16pt;
+  font-weight: 700;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-article-footer {
+  font-size: 16pt;
+  font-weight: 700;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-table {
+  width: 80%;
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
