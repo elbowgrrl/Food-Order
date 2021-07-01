@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 $(() => {
   const loadOrders = () => {
     $.get('/api/admin')
@@ -32,6 +33,7 @@ $(() => {
     `);
     return $order;
   };
+
 
   const renderOrders = (orders) => {
     const $orderList = $('#order-container');

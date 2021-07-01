@@ -35,7 +35,7 @@ $(() => {
       } else {
         foodList[id]['quantity'] += 1;
       }
-
+      console.log(foodList);
     });
   };
 

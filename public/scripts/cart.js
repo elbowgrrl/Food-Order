@@ -108,7 +108,7 @@ $(() => {
       <tr id='table${id}'>
         <td>${quantity}</td>
         <td>${name}</td>
-        <td><button type="submit" class="reduce-quantity" id='${foodInfo.id}'>Remove</button></td>
+        <td><button type="submit" class="reduce-quantity" id='${id}'>Remove</button></td>
         <td>$${price}</td>
         <td>$${price * quantity}</td>
       </tr>
