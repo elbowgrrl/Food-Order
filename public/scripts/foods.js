@@ -51,8 +51,8 @@ $(() => {
         <img class="food-image" src="${food.url_image}">
       </body>
       <footer class="menu-footer">
-        <button class='add-to-cart' id="${food.id}">Add to cart</button>
-        <button class="more-info-button" id='${food.id}'>More info</button>
+        <button class='confirm add-to-cart' id="${food.id}">Add to cart</button>
+        <button class="more-info" id='${food.id}'>More info</button>
       </footer>
     </article>
     `;
