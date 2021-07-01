@@ -13,7 +13,6 @@ $(() => {
     const $orderHtml = (`
         <div>
           <h4>food name : ${order.name}</h4>
-          <h4>food name : ${order.user_name}</h4>
           <h4>quantity : ${order.quantity}</h4>
           <h4>price : $${order.price / 100}</h4>
         </div>
@@ -26,7 +25,6 @@ $(() => {
     const $orderHtml = (`
         <form>
           <h4>food name : ${order.name}</h4>
-          <h4>food name : ${order.user_name}</h4>
           <h4>quantity : ${order.quantity}</h4>
           <h4>price : $${order.price / 100}</h4>
         </form>
