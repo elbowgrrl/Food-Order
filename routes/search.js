@@ -4,17 +4,17 @@ const router = express.Router();
 const searchRoutes = (db) => {
   //api/search/:foodName
   router.get("/:foodName", (req, res) => {
-    console.log("req.params", req.params);
-    const reqParam = req.params.foodName.slice(1, -1);
-    const search = `%${reqParam}%`;
+    // console.log("req.params.foodName: ", req.params.foodName);
+    const reqParam = req.params.foodName.split("=")[1];
+    // console.log("reqParam after split: ", reqParam);
+    const reqParamSplit = reqParam.slice(1, -1);
+    const search = `%${reqParamSplit}%`;
     db.query(`
     SELECT * FROM foods
     WHERE foods.name LIKE $1;
     `, [search])
     .then((response) => {
       res.json(response.rows);
-      //const search = response.rows
-      //res.render("search", {search})
     })
     .catch((error) => {
       console.log(error);
