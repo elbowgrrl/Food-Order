@@ -52,7 +52,7 @@ $(() => {
       <button type="submit" class="confirm"><a href="/">Find more food</a></button>
     </footer>
     </article>
-      `);
+    `);
     }
   }
 });
