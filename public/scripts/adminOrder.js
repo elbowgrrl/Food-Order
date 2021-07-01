@@ -1,13 +1,14 @@
+/* eslint-disable no-undef */
 $(() => {
 
   const loadOrders = () => {
     const orderId = $('#reqParam').text();
+    // console.log("orderID", orderId);
     $.get(`/api/admin/${orderId}`)
       .then((orders) => {
         renderOrders(orders);
       });
   };
-
   const displayOrderElement = (order) => {
     const $orderHtml = (`
         <div>
@@ -20,7 +21,7 @@ $(() => {
   };
 
   const displayStartOrEndOrderElement = (order) => {
-    console.log(order);
+    // console.log(order);
     const $orderHtml = (`
         <form>
           <h4>food name : ${order.name}</h4>
@@ -34,9 +35,9 @@ $(() => {
 
   const renderOrders = (orders) => {
     const $orderList = $('#orderInfo');
-    console.log(orders);
+    // console.log(orders);
     $orderList.empty();
-    if(orders.length !== 0) {
+    if (orders.length !== 0) {
       $orderList.append(`<h4>order id : ${orders[0].id}</h4>`);
     }
     for (let i = 0; i < orders.length; i++) {
@@ -52,7 +53,7 @@ $(() => {
   const $notifyForm = $('#notifyCustomer');
   $notifyForm.submit(function(event) {
     event.preventDefault();
-    console.log("notify form button submitted!");
+    // console.log("notify form button submitted!");
     $.post(`/api/admin/:orderId`);
   });
 

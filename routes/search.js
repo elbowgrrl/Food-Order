@@ -13,15 +13,15 @@ const searchRoutes = (db) => {
     SELECT * FROM foods
     WHERE foods.name LIKE $1;
     `, [search])
-    .then((response) => {
-      res.json(response.rows);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  })
+      .then((response) => {
+        res.json(response.rows);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   return router;
-}
+};
 
 module.exports = searchRoutes;

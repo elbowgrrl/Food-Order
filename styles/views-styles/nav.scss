@@ -25,7 +25,7 @@ nav {
 .search-bar {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-around;
   font-family: 'Rubik', serif;
   font-size: 18pt;
 }
@@ -40,7 +40,7 @@ nav {
 #search-box {
   width: 250px;
   height: 25px;
-  font-size: 35px;
+  font-size: 12pt;
 }
 
 #logo {
@@ -50,11 +50,11 @@ nav {
   -webkit-text-stroke: 3px #802a2a;
 }
 
-
-
 #tag-line {
   font-family: 'Rubik', serif;
   color: black;
   font-size: 26pt;
 }
+
+
 

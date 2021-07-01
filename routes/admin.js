@@ -46,11 +46,13 @@ const adminRoutes = (db) => {
   router.post("/:orderId", (req, res) => {
     client.messages
       .create({
-        body: 'BY awesome!',
-        from: '+18328624039',
-        to: '+12508858981'
+        body: 'Order is completed. Please come and pick up',
+        from: process.env.YOOMMI_CONTACT,
+        to: process.env.CUSTOMER_CONTACT
       })
-      .then(message => console.log(message.sid));
+      .then(message => console.log(message.sid))
+      .catch(error => console.log(error.message));
+    res.json({ success: true });
   });
 
   return router;

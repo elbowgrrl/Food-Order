@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 $(() => {
   //console.log("ajax in!!!");
-  const $searchForm = $('#search-form');
+  const $searchForm = $('#search-box');
 
   $searchForm.submit(function(event) {
     event.preventDefault();
@@ -9,7 +10,7 @@ $(() => {
       .then((foods) => {
         console.log(foods);
         renderSearch(foods);
-         $searchForm[0].reset();
+        $searchForm[0].reset();
       });
   });
 
@@ -18,7 +19,7 @@ $(() => {
     <article class="menu-item">
     <header class="menu-header">
       <span>${food.name}</span>
-      <span>$${food.price/100}</span>
+      <span>$${food.price / 100}</span>
     </header>
     <body>
     <img class="food-image" src="${food.url_image}">
@@ -31,7 +32,7 @@ $(() => {
     `);
 
     return $food;
-  }
+  };
 
   const renderSearch = (foods) => {
     const $mainContainer = $('#main-container');
@@ -54,5 +55,5 @@ $(() => {
     </article>
     `);
     }
-  }
+  };
 });

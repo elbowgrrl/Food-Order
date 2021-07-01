@@ -11,6 +11,11 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require("cookie-session");
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
+
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -47,6 +52,8 @@ const widgetsRoutes = require("./routes/widgets");
 const adminRoutes = require("./routes/admin");
 const searchRoutes = require("./routes/search");
 
+
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -63,6 +70,12 @@ app.use("/api/search", searchRoutes(db));
 app.get("/", (req, res) => {
   res.render("menu");
 });
+
+app.get('/login/:id', (req, res) => {
+  req.session.userId = req.params.id;
+  res.redirect('/');
+});
+
 app.get("/admin", (req, res) => {
   res.render("admin");
 });
