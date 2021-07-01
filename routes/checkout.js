@@ -1,6 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 
+require('dotenv').config();
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 
 const getIdAndQuantity = (data) => {
   const array = [];
@@ -43,6 +47,15 @@ module.exports = (db) => {
           `, IdAndQuantity);
         }
       });
+
+    client.messages
+      .create({
+        body: `Please check app to see new order`,
+        from: process.env.YOOMMI_CONTACT,
+        to: process.env.RESTAURANT_CONTACT
+      })
+      .then(message => console.log(message))
+      .catch(error => console.error(error.message));
 
 
     res.json({ success: true });
