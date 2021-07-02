@@ -1,70 +1,80 @@
-/* eslint-disable no-undef */
 $(() => {
-
+  const order_id = $('#order_id').val()
+  //alert(order_id);
   const loadOrders = () => {
-    const orderId = $('#reqParam').text();
-    // console.log("orderID", orderId);
-    $.get(`/api/admin/${orderId}`)
+    $.get(`/api/admin/${order_id}`)
       .then((orders) => {
         renderOrders(orders);
       });
   };
-  // const displayOrderElement = (order) => {
-  //   const $orderHtml = (`
-  //   <article class="cart-order">
-  //       <div>
-  //         <h4>food name : ${order.name}</h4>
-  //         <h4>quantity : ${order.quantity}</h4>
-  //         <h4>price : $${order.price / 100}</h4>
-  //       </div>
-  //   </article>
-  //   `);
-  //   return $orderHtml;
-  // };
-
 
   const displayOrderElement = (order) => {
-
-    //  console.log(order);
+    //console.log(order);
     const $orderHtml = (`
-    <article class="cart-order">
-    <div class="Rtable Rtable--3cols">
-      <div class="Rtable-cell">food name</div>
-      <div class="Rtable-cell">quantity</div>
-      <div class="Rtable-cell">price</div>
-      <div class="Rtable-cell">${order.name}</div>
-      <div class="Rtable-cell">${order.quantity}</div>
-      <div class="Rtable-cell">$${order.price / 100}</div>
-    </div>
-    </article>
+    <tr>
+      <td class="cart-table">${order.name}</td>
+      <td class="cart-table">${order.quantity}</td>
+      <td class="cart-table">$${order.price / 100}</td>
+    </tr>
     `);
     return $orderHtml;
   };
 
   const renderOrders = (orders) => {
+    const $orderList = $('#admin-order-container');
+    const $orders = $(`
+      <article class="cart-article">
+        <header class="cart-article-header">
+          <span class="title">Order id: ${orders[0].id}</span>
+          <span class="customer-name">Customer Name: Tester</span>
+        </header>
+          <div>
+            <table class="cart-table">
+              <thead id="tableRow">
+                <tr>
+                  <th>Food name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+                <span id="order_info"></span>
+              </thead>
+              <tbody class='food-container'>
+              </tbody>
+            </table>
+          </div>
+          <div>
+
+          </div>
+        <footer class="cart-article-footer">
+        <div id="total_price"></div>
+        <form id="notify">
+          <button type="submit" class="confirm">Notify customer</button>
+        </form>
+        </footer>
+      </article>
+    `);
+    $orderList.append($orders);
+
     let totalPrice = 0;
-    const $orderList = $('#orderInfo');
-    // console.log("Orders: ", orders);
-    $orderList.empty();
-    if (orders.length !== 0) {
-      $orderList.append(`<h4>order id : ${orders[0].id}</h4>`);
-    }
+    $orderRow = $('#tableRow');
+
     for (let i = 0; i < orders.length; i++) {
       totalPrice += parseInt(orders[i].total_price);
       if (i < orders.length - 1) {
-        $orderList.append(displayOrderElement(orders[i]));
+        $orderRow.append(displayOrderElement(orders[i]));
       }
       if (i === orders.length - 1) {
-        $orderList.append(displayOrderElement(orders[i]));
-        $orderList.append(`<h4>total price : $${totalPrice / 100}</h4>`);
+        $orderRow.append(displayOrderElement(orders[i]));
+        $('#total_price').append(`<h4>total price : $${totalPrice / 100}</h4>`);
       }
     }
   };
 
-  const $notifyForm = $('#notifyCustomer');
-  $notifyForm.submit(function(event) {
+  const $orderList = $("#admin-order-container");
+
+  $orderList.on("submit", "#notify", function(event){
     event.preventDefault();
-    // console.log("notify form button submitted!");
+    alert("Message sent to the customer!");
     $.post(`/api/admin/:orderId`);
   });
 
