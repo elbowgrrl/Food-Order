@@ -78,7 +78,7 @@ $(() => {
   $orderList.on("submit", "#notify", function(event){
     event.preventDefault();
     alert("Message sent to the customer!");
-    $.post(`/api/admin/:orderId`);
+    $.post(`/api/admin/${order_id}`);
     window.location.href = '/admin';
   });
 
