@@ -70,14 +70,14 @@ $(() => {
     }
     if (foods.length === 0) {
       $mainContainer.append(`
-    <article class="menu-item">
-    <header class="menu-header">
+    <article class="search-item">
+    <header class="search-header">
       <span>No food found</span>
     </header>
     <body>
     </body>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm">Find more food</button>
+    <footer class="search-footer">
+      <button type="submit" id="find-more-food" class="confirm"><a href="/">Find more food</a></button>
     </footer>
     </article>
     `);

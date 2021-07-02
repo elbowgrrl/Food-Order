@@ -17,7 +17,7 @@ $(() => {
     for (const food of foods) {
       foodContainer.push(createFoodElement(food));
     }
-    $foodList.append(foodContainer.join(", "));
+    $foodList.append(foodContainer.join(" "));
 
     $(".add-to-cart").click((event) => {
       const id = parseInt(event.target.id);
@@ -222,10 +222,10 @@ const createFoodElement = function (food) {
     <body>
       <img class="food-image" src="${food.url_image}">
     </body>
-    <footer class="menu-footer">
+    <div class="menu-footer">
       <button class='add-to-cart' id="${food.id}">Add to cart</button>
       <button class="more-info-button" id='${food.id}'>More info</button>
-    </footer>
+    </div>
   </article>
   `;
 
