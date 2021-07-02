@@ -52,8 +52,6 @@ const widgetsRoutes = require("./routes/widgets");
 const adminRoutes = require("./routes/admin");
 const searchRoutes = require("./routes/search");
 
-
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
