@@ -25,7 +25,8 @@ const adminRoutes = (db) => {
            foods.name,
            order_foods.quantity AS quantity,
            foods.price AS price,
-           SUM(foods.price*quantity) AS total_price
+           SUM(foods.price*quantity) AS total_price,
+           orders.special_instructions AS special_instruction
     FROM orders
     JOIN order_foods ON order_foods.order_id = orders.id
     JOIN foods ON food_id = foods.id
@@ -33,9 +34,11 @@ const adminRoutes = (db) => {
     GROUP BY orders.id,
              foods.name,
              order_foods.quantity,
-             foods.price
+             foods.price,
+             orders.special_instructions
     ;`, [reqParams])
       .then((response) => {
+        console.log("response.rows",response.rows);
         res.json(response.rows);
       })
       .catch((error) => {
