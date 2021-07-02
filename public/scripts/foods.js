@@ -17,7 +17,7 @@ $(() => {
     for (const food of foods) {
       foodContainer.push(createFoodElement(food));
     }
-    $foodList.append(foodContainer.join(", "));
+    $foodList.append(foodContainer.join(" "));
 
     $(".add-to-cart").click((event) => {
       const id = parseInt(event.target.id);
@@ -57,8 +57,6 @@ $(() => {
         });
     });
   };
-
-
 
 });
 

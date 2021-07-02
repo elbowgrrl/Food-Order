@@ -24,10 +24,10 @@ $(() => {
     <body>
     <img class="food-image" src="${food.url_image}">
     </body>
-    <footer class="search-footer">
+    <div class="search-footer">
       <button type="submit" class="confirm">Add to cart</button>
       <button type="submit" class="confirm">More info</button>
-    </footer>
+    </div>
     </article>
     `);
 
@@ -43,14 +43,14 @@ $(() => {
     // console.log(foods);
     if (foods.length === 0) {
       $mainContainer.append(`
-    <article class="menu-item">
-    <header class="menu-header">
+    <article class="search-item">
+    <header class="search-header">
       <span>No food found</span>
     </header>
     <body>
     </body>
-    <footer class="menu-footer">
-      <button type="submit" class="confirm"><a href="/">Find more food</a></button>
+    <footer class="search-footer">
+      <button type="submit" id="find-more-food" class="confirm"><a href="/">Find more food</a></button>
     </footer>
     </article>
     `);

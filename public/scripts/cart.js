@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 $(() => {
 
-
   $(`#cart`).click(function() {
     renderFoodList(foodList);
   });
