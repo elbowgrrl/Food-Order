@@ -79,6 +79,7 @@ $(() => {
     event.preventDefault();
     alert("Message sent to the customer!");
     $.post(`/api/admin/:orderId`);
+    window.location.href = '/admin';
   });
 
   loadOrders();
