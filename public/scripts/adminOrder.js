@@ -1,6 +1,8 @@
 $(() => {
   const order_id = $('#order_id').val()
-  //alert(order_id);
+  if (order_id == null) {
+    return;
+  }
   const loadOrders = () => {
     $.get(`/api/admin/${order_id}`)
       .then((orders) => {
@@ -9,7 +11,6 @@ $(() => {
   };
 
   const displayOrderElement = (order) => {
-    //console.log(order);
     const $orderHtml = (`
     <tr>
       <td class="cart-table">${order.name}</td>
