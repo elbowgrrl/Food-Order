@@ -67,8 +67,8 @@ $(() => {
       if (i === orders.length - 1) {
         console.log("orders info ", orders);
         $orderRow.append(displayOrderElement(orders[i]));
-        $('#total_price').append(`<h4>total price : $${totalPrice / 100}</h4>`);
-        $('#special_instruction').append(`<h4>${orders[0].special_instruction}</h4>`);
+        $('#total_price').append(`<h4>Total price : $${totalPrice / 100}</h4>`);
+        $('#special_instruction').append(`<h4>Special instruction: ${orders[0].special_instruction}</h4>`);
       }
     }
   };
