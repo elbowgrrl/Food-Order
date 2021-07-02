@@ -38,7 +38,6 @@ const adminRoutes = (db) => {
              orders.special_instructions
     ;`, [reqParams])
       .then((response) => {
-        console.log("response.rows",response.rows);
         res.json(response.rows);
       })
       .catch((error) => {
@@ -47,6 +46,15 @@ const adminRoutes = (db) => {
   });
 
   router.post("/:orderId", (req, res) => {
+    const reqParams = req.params.orderId;
+    console.log(reqParams);
+    db.query(`
+    DELETE FROM orders WHERE orders.id = $1;
+    `, [reqParams])
+      .catch((error) => {
+        console.log("Error message: ", error);
+      });
+
     client.messages
       .create({
         body: 'Order is completed. Please come and pick up',
@@ -62,4 +70,5 @@ const adminRoutes = (db) => {
 };
 
 module.exports = adminRoutes;
+
 
