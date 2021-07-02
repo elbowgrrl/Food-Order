@@ -44,10 +44,10 @@ $(() => {
             </table>
           </div>
           <div>
-
           </div>
         <footer class="cart-article-footer">
         <div id="total_price"></div>
+        <div id="special_instruction"></div>
         <form id="notify">
           <button type="submit" class="confirm">Notify customer</button>
         </form>
@@ -65,8 +65,10 @@ $(() => {
         $orderRow.append(displayOrderElement(orders[i]));
       }
       if (i === orders.length - 1) {
+        console.log("orders info ", orders);
         $orderRow.append(displayOrderElement(orders[i]));
         $('#total_price').append(`<h4>total price : $${totalPrice / 100}</h4>`);
+        $('#special_instruction').append(`<h4>${orders[0].special_instruction}</h4>`);
       }
     }
   };
