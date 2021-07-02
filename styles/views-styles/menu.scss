@@ -14,6 +14,19 @@
   flex-grow: 1;
 }
 
+.search-item {
+  background-color:rgb(206, 202, 202);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 400px;
+  width: 25%;
+}
+
 .food-image {
   max-width: 400px;
 }
@@ -26,11 +39,25 @@
   justify-content: space-between;
 }
 
+.search-header {
+  font-family: 'Jomhuria', serif;
+  font-size: 58px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .menu-footer {
   background-color:rgb(206, 202, 202);
   display: flex;
   justify-content: space-between;
   padding: 12px;
+}
+
+.search-footer {
+  background-color:rgb(206, 202, 202);
+  display: flex;
+  justify-content: space-between;
 }
 
 .confirm {
@@ -100,9 +127,9 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#040404;
-	font-family:Arial;
-	font-size:21px;
-	padding:10px 51px;
+	font-family: Arial;
+	font-size:24px;
+	padding:2px 81px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #219496;
 }
@@ -110,7 +137,27 @@
 #cart:hover {
 	background-color:#219496
 }
+
 #cart:active {
 	position:relative;
 	top:1px;
+}
+
+#more-info-item {
+  padding: 25;
+  background-color: rgb(206, 202, 202);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.more-info-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+p {
+  padding: 25px;
 }

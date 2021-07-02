@@ -16,12 +16,12 @@ module.exports = (db) => {
       });
   });
 
-  router.get("/", (req, res) => {
-    const query = `SELECT * FROM foods where id = $1;`;
-    db.query(query)
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+    const query = `SELECT * FROM foods where id = $1`;
+    db.query(query, [id])
       .then(data => {
-        const foods = data.rows;
-        res.json(foods);
+        res.json(data.rows[0]);
       })
       .catch(err => {
         res

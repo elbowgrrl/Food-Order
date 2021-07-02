@@ -79,6 +79,7 @@ app.get('/login/:id', (req, res) => {
 app.get("/admin", (req, res) => {
   res.render("admin");
 });
+
 app.get("/admin/:orderid", (req, res) => {
   const reqParam = req.params.orderid;
   console.log("reqParam", reqParam);
