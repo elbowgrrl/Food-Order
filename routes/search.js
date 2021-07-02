@@ -4,9 +4,7 @@ const router = express.Router();
 const searchRoutes = (db) => {
   //api/search/:foodName
   router.get("/:foodName", (req, res) => {
-    // console.log("req.params.foodName: ", req.params.foodName);
     const reqParam = req.params.foodName.split("=")[1];
-    // console.log("reqParam after split: ", reqParam);
     const reqParamSplit = reqParam.slice(1, -1);
     const search = `%${reqParamSplit}%`;
     db.query(`

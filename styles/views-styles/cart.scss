@@ -1,32 +1,81 @@
 .cart-article {
-  width: 60%;
-  padding: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 1em;
   border: 15px solid #802a2a;
   border-radius: 10px;
-  margin: 55px;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
-.cart-article-header {
-  font-size: 16pt;
-  font-weight: 700;
-  padding: 15px;
+.cart-article button {
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.cart-article button:hover {
+  background-color: yellow;
+}
+
+.cart-article > div {
+  min-height: 200px;
+}
+
+.cart-article #back_menu {
+  float: left;
+}
+
+.cart-article h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #802a2a;
+}
+
+
+
+.cart-table thead tr {
+  border-bottom: 3px solid #802a2a;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.cart-article-footer {
-  font-size: 16pt;
-  font-weight: 700;
-  padding: 15px;
+.cart-table thead th {
+  width: 8em;
+  text-align: center;
+  font-family: 'Fredoka One', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cart-table .food-container tr {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.cart-table {
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  border: 3px solid #802a2a;
-  padding: 0.5rem;
+.cart-table .food-container tr td {
+  width: 8em;
+  font-family: 'Fredoka One', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+#place_order {
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  font-family: 'Fredoka One', sans-serif;
+  font-style: italic;
+  width: auto;
+
+}
+
+#place_order textarea {
+  width: 600px;
+  margin-bottom: 1em ;
 }
