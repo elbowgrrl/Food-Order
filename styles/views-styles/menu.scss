@@ -161,9 +161,20 @@
 #more-info-item {
   padding: 25;
   background-color: rgb(206, 202, 202);
+  border: 3px solid #61E8EB;
+  filter: drop-shadow(10px 10px 4px rgb(140, 136, 136));
+  border-radius: 12px;
   width: 60%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
+}
+
+#more-info-item:hover{
+  filter: drop-shadow(10px 10px 4px #49b6b8);
 }
 
 .more-info-body {

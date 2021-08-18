@@ -1,4 +1,5 @@
 .cart-article {
+  font-family: 'Arial', sans-serif;
   width: 80%;
   margin: auto;
   padding: 1em;
@@ -8,11 +9,24 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .cart-article button {
-  background-color: aqua;
-  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+	background-color:#61E8EB;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#040404;
+	font-family:Arial;
+	font-size:21px;
+	padding:10px 51px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #219496;
 }
 
 .cart-article button:hover {
@@ -28,9 +42,9 @@
 }
 
 .cart-article h1 {
-  font-family: 'Fredoka One', sans-serif;
-  font-style: italic;
+  font-family: 'Jomhuria', serif;
   font-weight: bold;
+  font-size: 5em;
   color: #802a2a;
 }
 
@@ -46,8 +60,7 @@
 .cart-table thead th {
   width: 8em;
   text-align: center;
-  font-family: 'Fredoka One', sans-serif;
-  font-style: italic;
+  font-family: 'Arial', sans-serif;
   font-weight: bold;
 }
 
@@ -59,8 +72,7 @@
 
 .cart-table .food-container tr td {
   width: 8em;
-  font-family: 'Fredoka One', sans-serif;
-  font-style: italic;
+  font-family: 'Arial', sans-serif;
   font-weight: bold;
   text-align: center;
 }
@@ -69,8 +81,8 @@
   display: flex;
   flex-flow: column;
   align-content: flex-start;
-  font-family: 'Fredoka One', sans-serif;
-  font-style: italic;
+  font-family: 'Arial', sans-serif;
+
   width: auto;
 
 }
