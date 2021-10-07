@@ -6,12 +6,6 @@ A food ordering app for the customer and restaurant manager. The customer is abl
 Menu: 
 ![app screenshot](https://raw.githubusercontent.com/elbowgrrl/Food-Order/css/public/screenshots/Yoommi%20-%20menu%20view.png "Yoommi Menu")
 
-More Info: 
-![app screenshot](https://raw.githubusercontent.com/elbowgrrl/Food-Order/css/public/screenshots/Yoommi%20-%20more%20info%20view.png "Yoommi More Info")
-
-More Info: 
-![app screenshot](https://raw.githubusercontent.com/elbowgrrl/Food-Order/css/public/screenshots/Yoommi%20-%20checkout.png "Yoommi Cart")
-
 Demo: 
 ![app screenshot](https://github.com/elbowgrrl/Food-Order/blob/css/public/screenshots/Food-Order-Demo-Yoommi.gif)
 
